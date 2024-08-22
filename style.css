@@ -218,11 +218,6 @@ body {
 
 
 
-.btn {
-  background-color: #f8f9fa; /* Secondary button color */
-  color: #333; /* Text color for secondary buttons */
-}
-
 .btn:hover {
   opacity: 0.9; /* Add a hover effect */
 }
