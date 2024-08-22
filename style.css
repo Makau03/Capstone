@@ -198,11 +198,34 @@ body {
   padding: var(--padding, 10px 40px);
   border-radius: 50px;
   transition: var(--transition-2);
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .btn-primary.blue { background-color: var(--klein-blue); }
 
 .btn-primary.blue:is(:hover, :focus) { background-color: var(--orange-soda); }
+
+.btn-list {
+  list-style-type: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.btn-list li {
+  margin-bottom: 10px; /* Add spacing between buttons */
+}
+
+
+
+.btn {
+  background-color: #f8f9fa; /* Secondary button color */
+  color: #333; /* Text color for secondary buttons */
+}
+
+.btn:hover {
+  opacity: 0.9; /* Add a hover effect */
+}
 
 .img-cover {
   width: 100%;
