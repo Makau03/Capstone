@@ -343,7 +343,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-block: 100px var(--section-padding);
+  padding-block: 150px var(--section-padding); /* Increased padding */
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -370,7 +370,7 @@ body {
 
 .hero-title {
   font-family: var(--ff-barlow);
-  font-size: var(--fs-5);
+  font-size: calc(var(--fs-5) + 0.5rem); /* Increased font size */
   font-weight: var(--fw-600);
   line-height: 1.3;
   margin-block-end: 14px;
@@ -382,7 +382,10 @@ body {
   margin-block-end: 8px;
 }
 
-.hero-text { margin-block-end: 25px; }
+.hero-text { 
+  margin-block-end: 25px;
+  font-size: calc(var(--fs-5) - 0.2rem); /* Decreased font size */
+}
 
 .btn-group {
   display: flex;
@@ -403,7 +406,10 @@ body {
 .abs-img,
 .abs-icon { display: none; }
 
-.about { padding-block-start: 120px; }
+.about { 
+  padding-block-start: 120px;
+  background-color: hsl(243, 23%, 18%, 0.1); /* Added background color */
+}
 
 .about-banner {
   background-color: var(--independence);
@@ -431,7 +437,7 @@ body {
 
 .portfolio-list {
   display: grid;
-  gap: 60px;
+  gap: 80px; /* Increased spacing */
 }
 
 .portfolio-card {
@@ -448,6 +454,11 @@ body {
 }
 
 .portfolio-list > li:nth-child(even) .card-content { margin-inline-start: auto; }
+
+.portfolio-card:hover {
+  transform: translateY(-10px); /* Added hover effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
 .portfolio-card .card-subtitle {
   color: var(--orange-soda);
@@ -740,6 +751,47 @@ textarea.contact-input {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/**
+ * responsive for smaller than 600px screen
+ */
+@media (max-width: 600px) {
+  .navbar-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-banner {
+    margin-block-end: 20px;
+  }
+
+  .hero-title {
+    font-size: var(--fs-4);
+  }
+
+  .about .container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-banner {
+    margin-block-end: 20px;
+  }
+
+  .portfolio-list,
+  .skills-list,
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /**
  * responsive for larger than 600px screen
